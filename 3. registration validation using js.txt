@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Registration page</title>
+    <style>
+      #login-image {
+        height: 150px;
+        width: 150px;
+        border-radius: 64%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+      }
+
+      label {
+        font-family: monospace;
+        font-size: 23px;
+        color: #2e2630;
+        font-weight: bold;
+        margin-left: 15%;
+        text-align: center;
+      }
+
+      body {
+        background: #2e2630;
+      }
+
+      form {
+        border: 3px solid #2e2630;
+        background: #f0ebf8;
+        border-radius: 30px;
+        width: 40%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .box:focus {
+        outline: none;
+        border: 2px solid #2e2630;
+        background: aliceblue;
+      }
+
+      .box {
+        width: 70%;
+        padding: 12px 20px;
+        margin: 0 auto;
+        border-radius: 10px;
+        display: block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        margin-bottom: 5px;
+      }
+
+      .button {
+        margin-left: 40%;
+        border: 1px solid #ffffff;
+        border-radius: 4px;
+        font-size: 16px;
+        font-family: monospace;
+        color: #ffffff;
+        font-weight: 800;
+        padding: 4px;
+        background: #2e2630;
+        margin-bottom: 10px;
+      }
+
+      .button:hover {
+        cursor: pointer;
+      }
+
+      .lab {
+        margin: 0;
+        color: black;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <form name="form" onsubmit="return validate()" action="" method="post">
+      <img src="login.png" id="login-image">
+      <label for="name">Your Name</label>
+      <input class="box" type="text" placeholder="Enter your name" name="name">
+      <label for="age">Your age</label>
+      <input class="box" type="text" placeholder="Enter your age" name="age">
+      <label for="email">Enter E-mail</label>
+      <input class="box" type="text" placeholder="Enter emailId" name="email">
+      <label for="psw">Enter password</label>
+      <input class="box" type="password" placeholder="Enter password" name="psw">
+      <label for="gender">Gender</label>
+      <br>
+      <input type="radio" placeholder="Male" name="gender" value="male" style="margin-left: 17%;">
+      <label class="lab">Male</label>
+      <br>
+      <input type="radio" placeholder="Female" name="gender" value="female" style="margin-left: 17%;">
+      <label class="lab">Female</label>
+      <br>
+      <input type="submit" class="button" value="Sign up">
+    </form>
+    <script>
+      function validate() {
+        var name = document.forms["form"]["name"];
+        var age = document.forms["form"]["age"];
+        var email = document.forms["form"]["email"];
+        var password = document.forms["form"]["psw"];
+        var gender = document.forms["form"]["gender"];
+        if (name.value == "" || name.value == null) {
+          alert("Name should not be empty");
+          name.focus();
+          return false;
+        }
+        if (age.value == "" || age.value == null) {
+          alert("Age should not be empty");
+          age.focus();
+          return false;
+        }
+        if (isNaN(age.value)) {
+          alert("Age should in Number");
+          age.focus();
+          return false;
+        }
+        if (email.value == "" || email.value == null) {
+          alert("Email should not be empty");
+          email.focus();
+          return false;
+        }
+        if (email.value.indexOf("@") == -1 || email.value.indexOf(".") == -1 || email.value.indexOf(".") == 0) {
+          alert("Invalid Email ID");
+          email.focus();
+          return false;
+        }
+        if (password.value == "") {
+          alert("Password should not be empty");
+          password.focus();
+          return false;
+        }
+        if (password.value.length < 5) {
+          alert("Length of the password must be greater than 4");
+          password.focus();
+          return false;
+        }
+        if (gender[0].checked == false && gender[1].checked == false) {
+          alert("Select Gender");
+          return false;
+        }
+        alert("Your Details are correct");
+        return true;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+ajax.html
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function loadxmldoc() {
+        var xmlhttp;
+        if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari 
+            xmlhttp=new XMLHttpRequest();
+        } else { // code for IE6, IE5
+          xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+          if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
+          }
+        }
+        xmlhttp.open("GET", "ajax1.txt", true);
+        xmlhttp.send();
+      }
+    </script>
+  </head>
+  <body>
+    <h2>
+      <div id="myDiv">Let AJAX change this text</div>
+    </h2>
+    <button type="button" onclick="loadxmldoc()">Change Content</button>
+  </body>
+</html>

@@ -1,0 +1,113 @@
+inlinecss.html
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Inline style sheet</title>
+  </head>
+  <body>
+    <p style="font-family:Showcard Gothic">Welcome user..</p>
+    <p style="font-size:40pt; font-family:Microsoft sans serif">Gmail</p>
+    <p style="font-size:30pt;color:red;font-family:arial">The worlds largest spam free Email provider</p>
+    <p style="font-size:30pt;color:blue;font-family:Kristen ITC">Old user login here...</p>
+    <h4 style="font-family:Lucida Handwriting">User Name: <input type="text" value=" "> @gmail.com. <br>
+      <br> Password: <input type="password" value=""> 
+      <br>
+      <br>
+    </h4>
+    <input type="submit" value="login">
+    <input type="reset" value="cancel">
+    <br>
+    <br>
+    <p style="font-size:15pt;font-family:Lucida Handwriting">If you have your username or password <a href="login.html">Login</a> here <br>
+    <p style="font-size:15pt;font-family:fixedsys">If you are a new user <a href="register.html">Register</a> here </p>
+  </body>
+</html>
+
+embeddedcss.html
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Embedded style sheet </title>
+    <style type="text/css">
+      h1 {
+        font-family: arial;
+        font-size: 70px;
+        color: green;
+      }
+
+      h2 {
+        font-size: 30px;
+        font-family: arial;
+        color: red;
+        left: 20px;
+      }
+
+      h3 {
+        font-size: 50px;
+        font-family: arial;
+        color: blue;
+      }
+
+      p {
+        font-size: 14px;
+        font-family: verdana;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      <center>EMBEDDED STYLE SHEET</center>
+    </h1>
+    <h2> Computer science and Engineering</h2>
+    <h3>
+      <p> It is the best department. It has several lab facilities. </p>
+    </h3>
+  </body>
+</html>
+
+externalcss.html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>external css</title>
+    <link rel="stylesheet" type="text/css" href="ex.css" />
+  </head>
+  <body>
+    <center>
+      <h1> External style sheet</h1>
+    </center>
+    <h2>
+      <center>IP LAB</center>
+    </h2>
+    <p>
+    <h3>Our Institution consists of various departments : <br>
+      <ul>
+        <li>1.CSE</li>
+        <br>
+        <li>2.ECE</li>
+        <br>
+    </h3>
+    </p>
+    </ul>
+  </body>
+</html>
+
+ex.css
+
+h1 {
+  font-family: arial;
+  color: red;
+}
+
+h2 {
+  font-family: verdana;
+  color: green;
+}
+
+h3 {
+  font-family: courier;
+  color: magenta;
+  background: black;
+}

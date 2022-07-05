@@ -1,0 +1,64 @@
+form.html
+
+<html>
+  <head>
+    <title>Paramater Passing</title>
+    <style type="text/css">
+      body {
+        background-color: bisque;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <form method="GET" action="http://localhost:8080/lab/parameter"> Name: <input type="text" name="name">
+        <br>
+        <br> Mobile: <input type="text" name="mob">
+        <br>
+        <br>
+        <br>
+        <input type="submit">
+      </form>
+    </center>
+  </body>
+</html>
+
+parameter.java
+
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+public class parameter extends HttpServlet {
+  public void doGet(HttpServletRequest req, HttpServletResponse res)
+  throws IOException, ServletException {
+    res.setContentType("text/html");
+    PrintWriter pw = res.getWriter();
+    String s1 = req.getParameter("name");
+    String s2 = req.getParameter("mob");
+    pw.println("<html><title>student details</title><head></head>");
+    pw.println("<body>");
+    pw.println("<h1>PARAMETER PASSING IN JAVA SERVLET<h1>");
+    pw.println("this is the response created by java servlet ");
+    pw.println("<h1>" + s1 + "<h1>");
+    pw.println(s2);
+    pw.println("</body>");
+    pw.println("</html>");
+    pw.close();
+  }
+}
+
+web.xml
+
+<web-app>
+
+<servlet>
+    <servlet-name>parameter</servlet-name>
+    <servlet-class>parameter</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>parameter</servlet-name>
+    <url-pattern>/parameter</url-pattern>
+</servlet-mapping>
+
+</web-app> 
